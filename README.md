@@ -16,9 +16,9 @@ Example:
 
 It assumes that CSS rules are defined in their own line.
 
-### Images
+## Images
 
-Images are named after the color properties, for example, the rule below: 
+Images are named after the color properties, for example, the color below: 
 
     rgba(0, 252, 255, 0.8)
     
