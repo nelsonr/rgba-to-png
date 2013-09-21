@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["nelson@fullfront.pt"]
   spec.description   = %q{Command line tool that creates PNG image files from rgba definitions in stylesheets.}
   spec.summary       = %q{Creates PNG image files from rgba definitions in stylesheets.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/nelsonr/rgba-to-png"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
