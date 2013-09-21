@@ -31,6 +31,8 @@ class RgbaPng
     end
 
     self.create_files location
+
+    puts @colors.uniq.length.to_s + ' file(s) created!'
   end
 
   private
