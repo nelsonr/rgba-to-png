@@ -4,7 +4,6 @@ class RgbaPng
 
   @colors = []
   @rgba = /rgba\((\d+),(\d+),(\d+),(\d?.\d+)\)/
-  @background = /background(-color)?/
 
   def self.parse(file, location)
     if !file || !location
@@ -17,19 +16,17 @@ class RgbaPng
     location = location + '/'
 
     IO.foreach(file) do |line|
-      if line.match @background
-        is_rgba = line.match @rgba
+      is_rgba = line.match @rgba
 
-        if is_rgba
-          color = {
-              r: is_rgba[1].to_i,
-              g: is_rgba[2].to_i,
-              b: is_rgba[3].to_i,
-              a: (is_rgba[4].to_f * 255).to_i # Convert alpha value to 0-255 range
-          }
+      if is_rgba
+        color = {
+            r: is_rgba[1].to_i,
+            g: is_rgba[2].to_i,
+            b: is_rgba[3].to_i,
+            a: (is_rgba[4].to_f * 255).to_i # Convert alpha value to 0-255 range
+        }
 
-          @colors.push(color)
-        end
+        @colors.push(color)
       end
     end
 
