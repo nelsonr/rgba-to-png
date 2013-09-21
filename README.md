@@ -1,4 +1,4 @@
-rgba-to-png
+rgba-png
 ===========
 
 *Feed it rgba and it spews images!*
@@ -12,7 +12,7 @@ There's two parameters: **path to the source file** and **path to images destina
 
 Example:
 
-    ruby rgba2png.rb path/to/file.css path/to/images/folder
+    rgba-png path/to/file.css path/to/images/folder
 
 It assumes that CSS rules are defined in their own line.
 
