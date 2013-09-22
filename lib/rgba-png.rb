@@ -30,12 +30,10 @@ class RgbaPng
       end
     end
 
-    self.create_files location
+    create_files @colors, location
 
     puts @colors.uniq.length.to_s + ' file(s) created!'
   end
-
-  private
 
   # Create file name from the color, ex: 255-255-255-0_8
   def self.color_name(color)
@@ -44,8 +42,8 @@ class RgbaPng
     color[:r].to_s + '-' + color[:g].to_s + '-' + color[:b].to_s + '-' + alpha
   end
 
-  def self.create_files(location)
-    @colors.uniq.each do |color|
+  def self.create_files(colors, location)
+    colors.uniq.each do |color|
       bg = ChunkyPNG::Color.rgba(color[:r], color[:g], color[:b], color[:a])
       png = ChunkyPNG::Image.new(16, 16, bg)
       png.save(location + (self.color_name(color) + '.png'), interlace: true)
