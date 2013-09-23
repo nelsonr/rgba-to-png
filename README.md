@@ -3,8 +3,11 @@ rgba-png
 
 *Feed it rgba and it spews images!*
 
-Parse a source file (.css, .scss, etc..) for rgba color definitions and generates png images accordingly.
+**rgba-png** is a command line tool to create PNG images from RGBA color definitions in stylesheets.
 
+## Installation
+
+    gem install rgba_png
 
 ## Usage (command line)
 
