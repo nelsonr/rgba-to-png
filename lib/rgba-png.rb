@@ -5,15 +5,15 @@ class RgbaPng
   @colors = []
   @rgba = /rgba\((\d+),(\d+),(\d+),(\d?.\d+)\)/
 
-  def self.parse(file, location)
-    if !file || !location
+  def self.parse(file, destination)
+    if !file || !destination
       puts 'Error: wrong number of arguments, expected 2'
       puts 'Usage: rgba-png sourcefile destination'
 
       return
     end
 
-    location = location + '/'
+    destination = destination + '/'
 
     IO.foreach(file) do |line|
       is_rgba = line.match @rgba
@@ -30,7 +30,7 @@ class RgbaPng
       end
     end
 
-    create_files @colors, location
+    create_files @colors, destination
 
     puts @colors.uniq.length.to_s + ' file(s) created!'
   end
@@ -42,11 +42,11 @@ class RgbaPng
     color[:r].to_s + '-' + color[:g].to_s + '-' + color[:b].to_s + '-' + alpha
   end
 
-  def self.create_files(colors, location)
+  def self.create_files(colors, destination)
     colors.uniq.each do |color|
       bg = ChunkyPNG::Color.rgba(color[:r], color[:g], color[:b], color[:a])
       png = ChunkyPNG::Image.new(16, 16, bg)
-      png.save(location + (self.color_name(color) + '.png'), interlace: true)
+      png.save(destination + (self.color_name(color) + '.png'), interlace: true)
     end
   end
 
