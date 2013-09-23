@@ -10,10 +10,13 @@ class RgbaPng
       return
     end
 
-    colors = self.parse(file)
+    colors = parse(file)
     create_files colors, destination
+
+    puts colors.uniq.length.to_s + ' image(s) created!'
   end
 
+  # Creates colors array from source file
   def self.parse(file)
     colors = []
     rgba = /rgba\((\d+),(\d+),(\d+),(\d?.\d+)\)/
@@ -36,7 +39,7 @@ class RgbaPng
     colors
   end
 
-  # Create file name from the color, ex: 255-255-255-0.8
+  # Create file name from color, ex: 255-255-255-0.8
   def self.file_name(color)
     # Convert the alpha to 0-1 range
     alpha = (color[:a] / 255.to_f).round(1)
@@ -44,6 +47,7 @@ class RgbaPng
     color[:r].to_s + '-' + color[:g].to_s + '-' + color[:b].to_s + '-' + alpha.to_s
   end
 
+  # Create png files from colors
   def self.create_files(colors, destination)
     colors.uniq.each do |color|
       bg = ChunkyPNG::Color.rgba(color[:r], color[:g], color[:b], color[:a])
@@ -53,7 +57,7 @@ class RgbaPng
         Dir.mkdir destination
       end
 
-      png.save(destination + '/' + (self.file_name(color) + '.png'), interlace: true)
+      png.save(destination + '/' + (file_name(color) + '.png'), interlace: true)
     end
   end
 
