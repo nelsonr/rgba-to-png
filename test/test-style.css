@@ -1,0 +1,11 @@
+body {
+    background: rgba(255,200,254,.3);
+}
+
+.container {
+    background-color: rgba(0,200,70,.5);
+}
+
+h1 {
+    color: rgba(255,120,10,.8);
+}

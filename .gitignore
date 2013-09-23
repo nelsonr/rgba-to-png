@@ -18,9 +18,3 @@ tmp
 
 # IDE
 .idea/*
-
-# Stylesheets
-*.css
-*.less
-*.scss
-*.sass
