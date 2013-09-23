@@ -29,7 +29,7 @@ class RgbaPng
             r: is_rgba[1].to_i,
             g: is_rgba[2].to_i,
             b: is_rgba[3].to_i,
-            a: (is_rgba[4].to_f * 255).round(1).to_i # Convert alpha value to 0-255 range
+            a: (is_rgba[4].to_f * 255).to_i # Convert alpha value to 0-255 range
         }
 
         colors.push(color)
