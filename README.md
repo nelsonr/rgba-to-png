@@ -24,4 +24,4 @@ Images are named after the color properties, for example, the color below:
     
 Will generate the following file:
 
-    0-252-255-0_8.png
+    0-252-255-0.8.png
