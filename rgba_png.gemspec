@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rgba-png/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "rgba-png"
+  spec.name          = "rgba_png"
   spec.version       = RgbaPng::VERSION
   spec.authors       = ["Nelson Rodrigues"]
   spec.email         = ["nelson@fullfront.pt"]

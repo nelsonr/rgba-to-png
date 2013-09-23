@@ -4,7 +4,6 @@ class RgbaPng
 
   def self.init(file, destination)
     if !file || !destination
-      puts 'Error: wrong number of arguments, expected 2'
       puts 'Usage: rgba-png sourcefile destination'
 
       return

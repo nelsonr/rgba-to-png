@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'rgba-png'
+require 'rgba_png'
 
 RgbaPng.init(ARGV[0], ARGV[1])

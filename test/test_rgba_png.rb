@@ -1,5 +1,5 @@
 require 'test/unit'
-require 'rgba-png'
+require 'rgba_png'
 require 'fileutils'
 
 if ENV['RUBYMINE']
